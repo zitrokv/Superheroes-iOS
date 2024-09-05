@@ -8,13 +8,6 @@
 import UIKit
 
 class ListViewController: UIViewController, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
-    }
     
     
     @IBOutlet weak var tableView: UITableView!
@@ -32,10 +25,27 @@ class ListViewController: UIViewController, UITableViewDataSource {
                                                      
                                                  }*/
             self.superheroeList = results
-                                        })
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        })
     }
     
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return superheroeList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! SuperheroeViewCell
+        
+        let superhero = superheroeList[indexPath.row]
+        
+        cell.render(superheroe: superhero)
+        
+        return cell
+        
+    }
     
     
 }

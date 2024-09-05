@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C0FAD2F2C899AA10084FB7C /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0FAD2E2C899AA10084FB7C /* UIImageViewExtensions.swift */; };
 		6CD309462C884D2200FD590E /* Superheroe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD309452C884D2200FD590E /* Superheroe.swift */; };
 		6CD309482C884F5500FD590E /* SuperheroeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD309472C884F5500FD590E /* SuperheroeProvider.swift */; };
 		6CD3094B2C885F8C00FD590E /* Constantes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD3094A2C885F8C00FD590E /* Constantes.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6C0FAD2E2C899AA10084FB7C /* UIImageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensions.swift; sourceTree = "<group>"; };
 		6CD309452C884D2200FD590E /* Superheroe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Superheroe.swift; sourceTree = "<group>"; };
 		6CD309472C884F5500FD590E /* SuperheroeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperheroeProvider.swift; sourceTree = "<group>"; };
 		6CD3094A2C885F8C00FD590E /* Constantes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constantes.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				6CD3094A2C885F8C00FD590E /* Constantes.swift */,
+				6C0FAD2E2C899AA10084FB7C /* UIImageViewExtensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 				6CD3094E2C88635000FD590E /* ListViewController.swift in Sources */,
 				6CF4C3E12C872AD700E3A0B5 /* ViewController.swift in Sources */,
 				6CD309482C884F5500FD590E /* SuperheroeProvider.swift in Sources */,
+				6C0FAD2F2C899AA10084FB7C /* UIImageViewExtensions.swift in Sources */,
 				6CD309462C884D2200FD590E /* Superheroe.swift in Sources */,
 				6CF4C3DD2C872AD700E3A0B5 /* AppDelegate.swift in Sources */,
 				6CF4C3DF2C872AD700E3A0B5 /* SceneDelegate.swift in Sources */,

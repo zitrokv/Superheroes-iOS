@@ -20,9 +20,14 @@ class SuperheroeProvider{
             if let error = error {
                 print("Error: \(error.localizedDescription)")
                 return
-            }else if let data = data {
+            } else if let data = data {
                //print("Data received: \(data)")
-                let result: SuperheroeResponse = try! JSONDecoder().decode(SuperheroeResponse.self, from: data)
+                if let str = String(data: data, encoding: .utf8) {
+                    print("Successfully decoded: \(str)")
+                }
+                //let result: SuperheroeResponse = try! JSONDecoder().decode(SuperheroeResponse.self, from: data)
+                let result = try! JSONDecoder().decode(SuperheroeResponse.self, from: data)
+                
                 withResult(result.results)
             }
         }
