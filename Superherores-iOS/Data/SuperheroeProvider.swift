@@ -22,9 +22,9 @@ class SuperheroeProvider{
                 return
             } else if let data = data {
                //print("Data received: \(data)")
-                if let str = String(data: data, encoding: .utf8) {
+                /*if let str = String(data: data, encoding: .utf8) {
                     print("Successfully decoded: \(str)")
-                }
+                }*/
                 //let result: SuperheroeResponse = try! JSONDecoder().decode(SuperheroeResponse.self, from: data)
                 let result = try! JSONDecoder().decode(SuperheroeResponse.self, from: data)
                 

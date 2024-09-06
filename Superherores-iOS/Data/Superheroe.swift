@@ -16,6 +16,16 @@ struct Superheroe: Codable {
     let id: String
     let name: String
     let image: Image
+    let powerstats: powerStats
+}
+
+struct powerStats: Codable {
+    let intelligence: String?
+    let strength: String?
+    let speed: String?
+    let durability: String?
+    let power: String?
+    let combat: String?
 }
 
 struct Image: Codable {

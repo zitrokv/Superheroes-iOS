@@ -19,6 +19,7 @@ class SuperheroeViewCell: UITableViewCell {
         avatarHeroe.loadFrom(url: superheroe.image.url)
         
         
+        
     }
     override func awakeFromNib() {
         super.awakeFromNib()
