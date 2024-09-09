@@ -18,8 +18,8 @@ class DetailViewController: UIViewController {
             let stackView11 = UIStackView()
         stackView11.translatesAutoresizingMaskIntoConstraints = false
         
-        stackView11.axis = .horizontal
-        stackView11.spacing = 8
+        stackView11.axis = .vertical //.horizontal
+        stackView11.spacing = 28
     
             return stackView11
         }()
@@ -28,8 +28,8 @@ class DetailViewController: UIViewController {
             let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
-        stackView.axis = .vertical
-        stackView.spacing = 50
+        stackView.axis = .horizontal// .vertical
+        stackView.spacing = 20
         stackView.alignment = .leading
     
             return stackView
@@ -72,56 +72,185 @@ class DetailViewController: UIViewController {
                     swiftBetaStackView11.trailingAnchor.constraint(equalTo: avatarImageView.trailingAnchor),
                     swiftBetaStackView11.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor)
                 ])
-                
-                ["","11","22"].forEach { price in
+            
+            
+            //var nameAtt = Superheroe.Type.self.Elements
+            var numbersString = ["1", "2", "3", "4", "5"]
+            var number = numbersString.map { String($0) }
+            
+            
+            //Info General Superheroe
+            
+            numbersString.forEach {  number in
                     let button2 = UIButton(type: .system)
-                    var configuration2 = UIButton.Configuration.borderedTinted()
-                    configuration2.title = price
+                var configuration2 = UIButton.Configuration.borderless()//.borderedTinted()
+                //configuration2.title = number //price
                     //configuration2.subtitle = "Suscripción"
                     //configuration2.image = UIImage(systemName: "eurosign.circle.fill")
-                    configuration2.imagePadding = 30
-                    configuration2.baseBackgroundColor = .systemBlue
+                    configuration2.imagePadding = 85//10
+                    //configuration2.baseBackgroundColor = .systemBlue
                     button2.configuration = configuration2
                     
-                    ["Aa","Batman"].forEach { price11 in
+                    ["Aa","Batman","Cc"].forEach { price11 in
                         let button = UIButton(type: .system)
-                        var configuration = UIButton.Configuration.borderedTinted()
-                        //configuration.title = superHeroe.name
+                        var configuration = UIButton.Configuration.borderless()//borderedTinted()
+                        //configuration.title = price11//superHeroe.name
                         //configuration.subtitle = superHeroe.id
-                        configuration.image =  if (configuration2.title != "11") { UIImage(systemName:"heart.fill") } else { UIImage(systemName:"figure.walk.motion") }
-                        configuration.imagePadding = 12
-                        configuration.baseBackgroundColor = .systemTeal
+                        if (configuration2.title != "") {
+                            //configuration.image = UIImage(systemName:"heart.fill")
+                            //configuration.subtitle = number //price11
+                            
+                            configuration.image = switch Int(number){
+                            case 1:
+                                UIImage(systemName:"figure.wave")
+                                
+                            case 2:
+                                UIImage(systemName:"pencil.and.outline")
+                            
+                            case 3:
+                                UIImage(systemName:"touchid")
+                                
+                            case 4:
+                                UIImage(systemName:"peacesign")
+                                
+                            default:
+                                UIImage(systemName:"heart.fill")
+                                
+                            }
+                            
+                            configuration.subtitle = switch Int(number){
+                            case 1:
+                                superHeroe.name
+                                
+                            case 2:
+                                superHeroe.powerstats.combat!
+                            
+                            case 3:
+                                superHeroe.powerstats.intelligence!
+                                
+                            case 4:
+                                superHeroe.powerstats.power!
+                                
+                            default:
+                                "P O W E R   S T A T S"
+                                
+                            }
+                        } else {
+                             configuration.image = UIImage(systemName:"figure.walk.motion")
+                             //configuration.title = price11//superHeroe.name
+                            
+                        }
+                        configuration.imagePadding = 45//12
+                        //configuration.baseBackgroundColor = .systemTeal
                         button.configuration = configuration
                         //button.backgroundColor =  UIColor.systemGreen
                         
                         
                        
                         
-                        //    swiftBetaStackView.addArrangedSubview(button)
+                        
                         if (price11 == "Aa"){
                             swiftBetaStackView11.addArrangedSubview(button)
                         }
-                        //swiftBetaStackView11.addArrangedSubview(button2)
+                        
                             
                        
                     }
                     if (configuration2.title != ""){
                         swiftBetaStackView.addArrangedSubview(button2)
                     }
+                    
+               
                 }
                 
                 
-                //swiftBetaStackView.addArrangedSubview(button)
+            
+            //PowerStats
             
             
-            
-            /*view.addSubview(swiftBetaStackView)
-                   
-                   NSLayoutConstraint.activate([
-                       swiftBetaStackView.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor),
-                       swiftBetaStackView.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
-                       swiftBetaStackView.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
-                   ])*/
+            numbersString.forEach {  number in
+                    let button2 = UIButton(type: .system)
+                    var configuration2 = UIButton.Configuration.borderedTinted()
+                //configuration2.title = number //price
+                    //configuration2.subtitle = "Suscripción"
+                    //configuration2.image = UIImage(systemName: "eurosign.circle.fill")
+                    configuration2.imagePadding = 85//10
+                    //configuration2.baseBackgroundColor = .systemBlue
+                    button2.configuration = configuration2
+                    
+                    ["Aa","Batman","Cc"].forEach { price11 in
+                        let button = UIButton(type: .system)
+                        var configuration = UIButton.Configuration.borderedTinted()
+                        //configuration.title = price11//superHeroe.name
+                        //configuration.subtitle = superHeroe.id
+                        if (configuration2.title != "") {
+                            //configuration.image = UIImage(systemName:"heart.fill")
+                            //configuration.subtitle = number //price11
+                            
+                            configuration.image = switch Int(number){
+                            case 1:
+                                UIImage(systemName:"figure.wave")
+                                
+                            case 2:
+                                UIImage(systemName:"pencil.and.outline")
+                            
+                            case 3:
+                                UIImage(systemName:"touchid")
+                                
+                            case 4:
+                                UIImage(systemName:"peacesign")
+                                
+                            default:
+                                UIImage(systemName:"heart.fill")
+                                
+                            }
+                            
+                            configuration.subtitle = switch Int(number){
+                            case 1:
+                                superHeroe.name
+                                
+                            case 2:
+                                superHeroe.powerstats.combat!
+                            
+                            case 3:
+                                superHeroe.powerstats.intelligence!
+                                
+                            case 4:
+                                superHeroe.powerstats.power!
+                                
+                            default:
+                                superHeroe.powerstats.speed!
+                                
+                            }
+                        } else {
+                             configuration.image = UIImage(systemName:"figure.walk.motion")
+                             //configuration.title = price11//superHeroe.name
+                            
+                        }
+                        configuration.imagePadding = 45//12
+                        //configuration.baseBackgroundColor = .systemTeal
+                        button.configuration = configuration
+                        //button.backgroundColor =  UIColor.systemGreen
+                        
+                        
+                       
+                        
+                        
+                        if (price11 == "Aa"){
+                            swiftBetaStackView11.addArrangedSubview(button)
+                        }
+                        
+                            
+                       
+                    }
+                    if (configuration2.title != ""){
+                        swiftBetaStackView.addArrangedSubview(button2)
+                    }
+                    
+               
+                }
+                
+    
                    
                    
             
