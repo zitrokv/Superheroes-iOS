@@ -89,7 +89,7 @@ class DetailViewController: UIViewController {
                     //configuration2.image = UIImage(systemName: "eurosign.circle.fill")
                     configuration2.imagePadding = 85//10
                     //configuration2.baseBackgroundColor = .systemBlue
-                    button2.configuration = configuration2
+                    //button2.configuration = configuration2
                     
                     ["Aa","Batman","Cc"].forEach { price11 in
                         let button = UIButton(type: .system)
@@ -113,6 +113,9 @@ class DetailViewController: UIViewController {
                             case 4:
                                 UIImage(systemName:"peacesign")
                                 
+                            case 5:
+                                UIImage(systemName: "line.horizontal.star.fill.line.horizontal")
+                                
                             default:
                                 UIImage(systemName:"heart.fill")
                                 
@@ -123,16 +126,19 @@ class DetailViewController: UIViewController {
                                 superHeroe.name
                                 
                             case 2:
-                                superHeroe.powerstats.combat!
+                                superHeroe.biography.publisher
+                                //superHeroe.powerstats.combat!
                             
                             case 3:
-                                superHeroe.powerstats.intelligence!
+                                superHeroe.biography.placeOfBirth
+                                //superHeroe.powerstats.intelligence!
                                 
                             case 4:
-                                superHeroe.powerstats.power!
+                                superHeroe.biography.alignment.uppercased()
+                                //superHeroe.powerstats.power!
                                 
                             default:
-                                "P O W E R   S T A T S"
+                                " - -  P O W E R   S T A T S  - - "
                                 
                             }
                         } else {
@@ -176,7 +182,7 @@ class DetailViewController: UIViewController {
                     //configuration2.image = UIImage(systemName: "eurosign.circle.fill")
                     configuration2.imagePadding = 85//10
                     //configuration2.baseBackgroundColor = .systemBlue
-                    button2.configuration = configuration2
+                    //button2.configuration = configuration2
                     
                     ["Aa","Batman","Cc"].forEach { price11 in
                         let button = UIButton(type: .system)
@@ -189,25 +195,25 @@ class DetailViewController: UIViewController {
                             
                             configuration.image = switch Int(number){
                             case 1:
-                                UIImage(systemName:"figure.wave")
+                                UIImage(systemName:"microbe.circle")
                                 
                             case 2:
-                                UIImage(systemName:"pencil.and.outline")
+                                UIImage(systemName:"comb.fill")
                             
                             case 3:
-                                UIImage(systemName:"touchid")
+                                UIImage(systemName:"brain.head.profile")
                                 
                             case 4:
-                                UIImage(systemName:"peacesign")
+                                UIImage(systemName:"bolt.ring.closed")
                                 
                             default:
-                                UIImage(systemName:"heart.fill")
+                                UIImage(systemName:"gauge.open.with.lines.needle.67percent.and.arrowtriangle")
                                 
                             }
                             
                             configuration.subtitle = switch Int(number){
                             case 1:
-                                superHeroe.name
+                                superHeroe.powerstats.durability
                                 
                             case 2:
                                 superHeroe.powerstats.combat!
