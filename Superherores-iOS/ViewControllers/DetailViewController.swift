@@ -13,13 +13,22 @@ class DetailViewController: UIViewController {
     
     var superHeroe : Superheroe? = nil
     
+    private let swiftBetaLabel: UILabel = {
+            let label = UILabel()
+            label.translatesAutoresizingMaskIntoConstraints = true//false
+            label.text = "🤑 In App Purchases 🤑"
+            label.textAlignment = .center
+            label.font = .systemFont(ofSize: 32)
+            return label
+        }()
     
     private let swiftBetaStackView11: UIStackView = {
             let stackView11 = UIStackView()
         stackView11.translatesAutoresizingMaskIntoConstraints = false
         
         stackView11.axis = .vertical //.horizontal
-        stackView11.spacing = 28
+        stackView11.spacing = 22
+        stackView11.alignment = .center
     
             return stackView11
         }()
@@ -29,8 +38,12 @@ class DetailViewController: UIViewController {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
         stackView.axis = .horizontal// .vertical
-        stackView.spacing = 20
+        stackView.spacing = 2
         stackView.alignment = .leading
+        //stackView.collisionBoundingPath.lineWidth = CGFloat(bitPattern: 3)
+        stackView.alignmentRect(forFrame: CGRect(x: 20, y: 3, width: 20, height: 3))
+        stackView.backgroundColor = UIColor.systemGray3
+        stackView.tintColor = UIColor(red: 35.0, green: 83.0, blue: 3.0, alpha: 0.3)
     
             return stackView
         }()
@@ -44,8 +57,6 @@ class DetailViewController: UIViewController {
         if let superHeroe = superHeroe {
             self.navigationItem.title = superHeroe.powerstats.combat! + " - " + superHeroe.name
             avatarImageView.loadFrom(url: superHeroe.image.url)
-            //superHeroe.powerStats.
-            
             
             view.addSubview(swiftBetaStackView)
             
@@ -74,9 +85,10 @@ class DetailViewController: UIViewController {
                 ])
             
             
+            
             //var nameAtt = Superheroe.Type.self.Elements
-            var numbersString = ["1", "2", "3", "4", "5"]
-            var number = numbersString.map { String($0) }
+            let numbersString = ["1", "2", "3", "4", "5"]
+            //var number = numbersString.map { String($0) }
             
             
             //Info General Superheroe
@@ -147,6 +159,7 @@ class DetailViewController: UIViewController {
                             
                         }
                         configuration.imagePadding = 45//12
+                       
                         //configuration.baseBackgroundColor = .systemTeal
                         button.configuration = configuration
                         //button.backgroundColor =  UIColor.systemGreen
@@ -156,6 +169,9 @@ class DetailViewController: UIViewController {
                         
                         
                         if (price11 == "Aa"){
+                            //button.textAlignment = .center
+                            button.contentHorizontalAlignment = .center
+                            button.titleLabel?.adjustsFontForContentSizeCategory = true
                             swiftBetaStackView11.addArrangedSubview(button)
                         }
                         
@@ -166,6 +182,7 @@ class DetailViewController: UIViewController {
                         swiftBetaStackView.addArrangedSubview(button2)
                     }
                     
+             
                
                 }
                 
@@ -181,6 +198,7 @@ class DetailViewController: UIViewController {
                     //configuration2.subtitle = "Suscripción"
                     //configuration2.image = UIImage(systemName: "eurosign.circle.fill")
                     configuration2.imagePadding = 85//10
+                
                     //configuration2.baseBackgroundColor = .systemBlue
                     //button2.configuration = configuration2
                     

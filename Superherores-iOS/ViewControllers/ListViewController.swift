@@ -24,7 +24,7 @@ class ListViewController: UIViewController, UITableViewDataSource {
         //Primera opcion llamada INTERNET
         //unowned self :> evita problemas de memoria para no restringir el acceso no disponible del elemento "self"
         
-        SuperheroeProvider.findSuperheroesByName("Batman", withResult: {
+        SuperheroeProvider.findSuperheroesByName("Super", withResult: {
             [unowned self] results in
                                                  /*for superheroe in results{
                                                     //print (superheroe.name)
