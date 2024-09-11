@@ -28,7 +28,7 @@ class DetailViewController: UIViewController {
         
         stackView11.axis = .vertical //.horizontal
         stackView11.spacing = 22
-        stackView11.alignment = .center
+        stackView11.alignment = .fill// .center
     
             return stackView11
         }()
@@ -37,6 +37,7 @@ class DetailViewController: UIViewController {
             let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
+       
         stackView.axis = .horizontal// .vertical
         stackView.spacing = 2
         stackView.alignment = .leading
@@ -69,7 +70,8 @@ class DetailViewController: UIViewController {
                 swiftBetaStackView.bottomAnchor.constraint(equalTo: avatarImageView.layoutMarginsGuide.bottomAnchor),
                 swiftBetaStackView.leadingAnchor.constraint(equalTo: avatarImageView.layoutMarginsGuide.leadingAnchor),
                 swiftBetaStackView.trailingAnchor.constraint(equalTo: avatarImageView.trailingAnchor),
-                swiftBetaStackView.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor)
+                swiftBetaStackView.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor),
+                swiftBetaStackView.widthAnchor.constraint(equalTo: avatarImageView.widthAnchor)
             ])
             
                 view.addSubview(swiftBetaStackView11)
@@ -81,7 +83,8 @@ class DetailViewController: UIViewController {
                     swiftBetaStackView11.bottomAnchor.constraint(equalTo: avatarImageView.layoutMarginsGuide.bottomAnchor),
                     swiftBetaStackView11.leadingAnchor.constraint(equalTo: avatarImageView.layoutMarginsGuide.leadingAnchor),
                     swiftBetaStackView11.trailingAnchor.constraint(equalTo: avatarImageView.trailingAnchor),
-                    swiftBetaStackView11.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor)
+                    swiftBetaStackView11.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor),
+                    swiftBetaStackView11.widthAnchor.constraint(equalTo: avatarImageView.widthAnchor)
                 ])
             
             
@@ -132,21 +135,21 @@ class DetailViewController: UIViewController {
                                 UIImage(systemName:"heart.fill")
                                 
                             }
-                            
+                                                        
                             configuration.subtitle = switch Int(number){
                             case 1:
-                                superHeroe.name
+                                "\t" + superHeroe.name
                                 
                             case 2:
-                                superHeroe.biography.publisher
+                                "\t" + superHeroe.biography.publisher
                                 //superHeroe.powerstats.combat!
                             
                             case 3:
-                                superHeroe.biography.placeOfBirth
+                                "\t" + superHeroe.biography.placeOfBirth
                                 //superHeroe.powerstats.intelligence!
                                 
                             case 4:
-                                superHeroe.biography.alignment.uppercased()
+                                "\t" + superHeroe.biography.alignment.uppercased()
                                 //superHeroe.powerstats.power!
                                 
                             default:
@@ -231,19 +234,19 @@ class DetailViewController: UIViewController {
                             
                             configuration.subtitle = switch Int(number){
                             case 1:
-                                superHeroe.powerstats.durability
+                                "\t" + superHeroe.powerstats.durability!
                                 
                             case 2:
-                                superHeroe.powerstats.combat!
+                                "\t" + superHeroe.powerstats.combat!
                             
                             case 3:
-                                superHeroe.powerstats.intelligence!
+                                "\t" + superHeroe.powerstats.intelligence!
                                 
                             case 4:
-                                superHeroe.powerstats.power!
+                                "\t" + superHeroe.powerstats.power!
                                 
                             default:
-                                superHeroe.powerstats.speed!
+                                "\t" + superHeroe.powerstats.speed!
                                 
                             }
                         } else {
