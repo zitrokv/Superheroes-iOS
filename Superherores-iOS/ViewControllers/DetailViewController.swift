@@ -28,7 +28,8 @@ class DetailViewController: UIViewController {
         
         stackView11.axis = .vertical //.horizontal
         stackView11.spacing = 22
-        stackView11.alignment = .fill// .center
+        stackView11.alignment = .leading// .center
+        stackView11.backgroundColor = UIColor.white
     
             return stackView11
         }()
@@ -40,10 +41,11 @@ class DetailViewController: UIViewController {
        
         stackView.axis = .horizontal// .vertical
         stackView.spacing = 2
-        stackView.alignment = .leading
+        stackView.alignment = .trailing// .leading
         //stackView.collisionBoundingPath.lineWidth = CGFloat(bitPattern: 3)
-        stackView.alignmentRect(forFrame: CGRect(x: 20, y: 3, width: 20, height: 3))
-        stackView.backgroundColor = UIColor.systemGray3
+        stackView.alignmentRect(forFrame: CGRect(x: 2, y: 3, width: 2, height: 3))
+        stackView.backgroundColor = UIColor.opaqueSeparator
+        stackView.sizeToFit()
         stackView.tintColor = UIColor(red: 35.0, green: 83.0, blue: 3.0, alpha: 0.3)
     
             return stackView
@@ -111,6 +113,7 @@ class DetailViewController: UIViewController {
                         var configuration = UIButton.Configuration.borderless()//borderedTinted()
                         //configuration.title = price11//superHeroe.name
                         //configuration.subtitle = superHeroe.id
+                        
                         if (configuration2.title != "") {
                             //configuration.image = UIImage(systemName:"heart.fill")
                             //configuration.subtitle = number //price11
@@ -129,7 +132,9 @@ class DetailViewController: UIViewController {
                                 UIImage(systemName:"peacesign")
                                 
                             case 5:
-                                UIImage(systemName: "line.horizontal.star.fill.line.horizontal")
+                                nil
+                                //UIImage()
+                                //UIImage(systemName: "line.horizontal.star.fill.line.horizontal")
                                 
                             default:
                                 UIImage(systemName:"heart.fill")
@@ -153,7 +158,8 @@ class DetailViewController: UIViewController {
                                 //superHeroe.powerstats.power!
                                 
                             default:
-                                " - -  P O W E R   S T A T S  - - "
+                                "\t"
+                                //" - -  P O W E R   S T A T S  - - "
                                 
                             }
                         } else {
@@ -161,9 +167,11 @@ class DetailViewController: UIViewController {
                              //configuration.title = price11//superHeroe.name
                             
                         }
-                        configuration.imagePadding = 45//12
+                        configuration.imagePadding = 15//12
                        
                         //configuration.baseBackgroundColor = .systemTeal
+                        
+                        //pinta Info General Superheroe
                         button.configuration = configuration
                         //button.backgroundColor =  UIColor.systemGreen
                         
@@ -254,10 +262,13 @@ class DetailViewController: UIViewController {
                              //configuration.title = price11//superHeroe.name
                             
                         }
-                        configuration.imagePadding = 45//12
+                        configuration.imagePadding = 15//12
                         //configuration.baseBackgroundColor = .systemTeal
+                       
+                        
+                        //pinta PowerStats
+                        button.backgroundColor =  UIColor.systemGreen
                         button.configuration = configuration
-                        //button.backgroundColor =  UIColor.systemGreen
                         
                         
                        
